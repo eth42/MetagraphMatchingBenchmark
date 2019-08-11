@@ -72,6 +72,12 @@ To disable the sorting of vertices and edges prior to the execution of the algor
 5. Remark on buffering files
 
 To decrease the computation time upon testing the same instances over and over again, all base graphs are stored as a .g file in the assets/tmp folder. It has been observed, that during read and write of those files, the order of vertices can vary. Thus it is recommended to always parse files into .g files with a call of the binary with the option -i 1 and then perform benchmarks, since all experiments will use the same base graph across different calls of the binary. If this is unfavored, you might aswell just clear the assets/tmp folder after every call, thus forcing the program to never use the buffer files. Even though this is a code flaw, it did not affect the correctness of the benchmarks, since the workarounds described above do work. It only increases the effort by the user, but since I performed most of my benchmarks using batch files, it did not end up to be a problem big enough for me, that I invested the time necessary to fix this bug, since it does not seem to be an obvious one and I would probably have spend more than a day on it.
+
+#####################################################################
+
+6. Visualization
+
+In the visualization directory is a python 3 script to start the visualization. When you run it, a webserver will start, which you can access via localhost:8050. If you open the site, you can load measurement files created by the binary and select filters for groups, x-axis and y-axis. Enjoy.
 	
 
 
